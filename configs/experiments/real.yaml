@@ -1,0 +1,35 @@
+# config.yaml
+experiment_name: "real_simpleTS"
+
+paths:
+  storage_path: "data/real" 
+  output_path: "results"
+
+forecaster:
+  name: "MedianEnsemble"
+  max_length: 512
+  models:
+    # - name: "Moirai"
+    #   params:
+    #     repo_id: "Salesforce/moirai-2.0-R-small" # "Salesforce/moirai-1.1-R-large"
+    #     batch_size: 64
+    # - name: "Sundial"
+    #   params:
+    #     batch_size: 64
+    - name: "Chronos2"
+      params:
+        batch_size: 64
+  alias: "Chronos2-Multivariate-Real"
+  
+evaluation:
+  to_univariate: false
+  show_plot: true
+  eval_substr: "dim0"
+
+datasets:
+  - name: "nvidia_120_leak"
+    term: "short"
+  - name: "covid"
+    term: "short"
+
+  

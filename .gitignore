@@ -1,0 +1,52 @@
+# cache
+*.pyc
+.venv
+__pycache__/
+.flak8
+=2.0
+
+
+# data
+data/gift_eval
+data/**/*.csv
+data/**/*.txt
+data/**/*.mat
+data/**/*.gz
+data/**/*.data
+data/**/*.names
+data/simpleTSbench/datasets
+data/simpleTSbench/datasets_1000
+data/simpletime/datasets
+data/real
+data/simpletime/datasets*
+
+
+# pdm
+.pdm-python
+.pdm.toml
+.pdm-build/
+.python-version
+.env
+
+
+# saved models
+results/*
+tmp_results
+model_zoo/chronos/finetuned_models
+
+# notebooks
+notebooks/tmp
+AutogluonModels/
+test/tmp_Dlinear.ipynb
+
+# saved log files
+forecast_log.pkl
+
+# Results of experiments
+results
+model_zoo/chronos/finetuned_models/*
+src/tsfm/results
+src/tsfm/runs
+
+# Configs of personal experiments
+configs/experiments/personal/*

@@ -1,0 +1,37 @@
+# config.yaml
+experiment_name: "simpletime_sample"
+
+paths:
+  storage_path: "data/simpletime/datasets" 
+  output_path: "results"
+
+forecaster:
+  name: "MedianEnsemble"
+  max_length: 512
+  models:
+    # - name: "Moirai"
+    #   params:
+    #     repo_id: "Salesforce/moirai-2.0-R-small" # "Salesforce/moirai-1.1-R-large"
+    #     batch_size: 64
+    # - name: "Sundial"
+    #   params:
+    #     batch_size: 64
+    - name: "Chronos2"
+      params:
+        repo_id: "model_zoo/chronos/finetuned_models/20260121_183007/finetuned-ckpt" # for final model and model.safetensors for mid-training
+        batch_size: 64
+  alias: "Chronos2-FineTuned-Multivariate-simpletime-Sample"
+  
+evaluation:
+  to_univariate: false
+  show_plot: true
+  eval_substr: "dim0"
+
+datasets:
+  - name: "multivariate_lagged/random_walk"
+    term: "short"
+  # - name: "multivariate_lagged/sawtooth"
+  #   term: "short"
+  # - name: "multivariate_lagged/exponential"
+  #   term: "short"
+  

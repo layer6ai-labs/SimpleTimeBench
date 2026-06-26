@@ -1,0 +1,37 @@
+# config.yaml
+experiment_name: "simpletime_sample"
+
+paths:
+  storage_path: "data/simpletime/datasets" 
+  output_path: "results"
+
+forecaster:
+  name: "MedianEnsemble"
+  max_length: 512
+  models:
+    # - name: "Moirai"
+    #   params:
+    #     repo_id: "Salesforce/moirai-1.1-R-large"
+    #     batch_size: 64
+  #   - name: "Sundial"
+  #     params:
+  #       batch_size: 64
+    # - name: "Toto"
+    #   params:
+    #     context_length: 4_096
+    #     batch_size: 64
+    - name: "Chronos2"
+      params:
+        batch_size: 64
+  alias: "SimpleTime-Sample-Chronos2" # An identifier for your ensemble
+
+evaluation:
+  to_univariate: false
+  show_plot: true
+  eval_substr: "dim0"
+
+datasets:
+  - name: "univariate/linear"
+    term: "short"
+  - name: "multivariate_lagged/sine"
+    term: "short"

@@ -1,0 +1,27 @@
+# config.yaml
+experiment_name: "GiftEval_Full"
+
+paths:
+  storage_path: "data/gift_eval" 
+  output_path: "results"
+
+forecaster:
+  name: "MedianEnsemble"
+  max_length: 512
+  models:
+    # - name: "Moirai"
+    #   params:
+    #     repo_id: "Salesforce/moirai-1.1-R-large"
+    #     batch_size: 64
+    # - name: "Sundial"
+    #   params:
+    #     batch_size: 64
+    - name: "Toto"
+      params:
+        context_length: 4_096
+        batch_size: 64
+  alias: "ToTo-GiftEval" # An identifier for your ensemble
+
+evaluation:
+  to_univariate: true
+  show_plot: false

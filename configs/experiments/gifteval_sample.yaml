@@ -1,0 +1,36 @@
+# config.yaml
+experiment_name: "gift_eval_sample"
+paths:
+  storage_path: "data/gift_eval" 
+  output_path: "results"
+
+forecaster:
+  name: "MedianEnsemble"
+  max_length: 512
+  models:
+     - name: "Moirai"
+       params:
+         repo_id: "Salesforce/moirai-1.1-R-large" #"Salesforce/moirai-2.0-R-small" 
+         batch_size: 64
+    #  - name: "Sundial"
+    #   params:
+    #     batch_size: 64
+    # - name: "Toto"
+    #   params:
+    #     context_length: 4_096
+    #     batch_size: 64
+  alias: "Moirai-GiftEval-sample" # An identifier for your ensemble
+
+evaluation:
+  to_univariate: true
+  show_plot: true
+
+datasets:
+  - name: "ett1/D"
+    term: "short"
+  - name: "bizitobs_l2c/H"
+    term: "medium"
+  # - name: "bizitobs_l2c/H"
+  #   term: "long"
+  # - name: "m4_weekly"
+  #   term: "short"

@@ -1,0 +1,69 @@
+[project]
+name = "multivar_timeseries"
+version = "0.1.0"
+description = "multivariate timeseries forecast"
+authors = [
+    {name = "Nafiseh Ghoroghchian", email = "nafiseh@Layer6.ai"},
+    {name = "Goerge Stein", email = "your.email@example.com"},
+    {name = "Roc", email = "your.email@example.com"},
+    {name = "Zoey", email = "your.email@example.com"},
+]
+dependencies = [
+    "fire",
+    "gluonts @ git+https://github.com/Zhang-Haipeng/gluonts.git@v0.16.x",
+    "lightgbm>=4.6.0",
+    "mlforecast>=1.0.2",
+    "neuralforecast>=3.0.2",
+    "nixtla>=0.6.6",
+    "openai>=1.99.7",
+    "pandas>=2.0.0",
+    "pydantic-ai[logfire]",
+    "scipy<=1.15.3",
+    "seaborn>=0.13.2",
+    "shap>=0.48.0",
+    "statsforecast",
+    "tabpfn-time-series>=1.0.3 ; python_full_version < '3.13'",
+    "timecopilot-chronos-forecasting>=0.1.0",
+    "timecopilot-timesfm>=0.1.0",
+    "timecopilot-tirex>=0.1.0 ; python_full_version >= '3.11'",
+    "timecopilot-toto>=0.1.3",
+    "timecopilot-uni2ts>=0.1.2 ; python_full_version < '3.14'",
+    "tsfeatures",
+    "typing-extensions>=4.15.0",
+    "utilsforecast[plotting]",
+    "torch>=2.0,<3",
+    "torch>=2.0,<3",
+    "transformers>=4.49,<5",
+    "accelerate>=0.34,<2",
+    "numpy>=1.21,<3",
+    "einops>=0.7.0,<1",
+    "scikit-learn>=1.6.0,<2",
+    "boto3",
+    "chronos-forecasting>=2.0.0",
+    "prophet>=1.2.0",
+    "cmdstanpy>=1.3.0",
+    "pystan>=3.10.0",
+    "polars>=1.36.0",
+    "ipykernel>=7.0.1",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+
+[project.optional-dependencies]
+models = [
+]
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "flake8>=7.3.0",
+    "jupyterlab>=4.4.9",
+]

@@ -1,0 +1,2 @@
+,dataset,cross_correlation,mutual_information,granger_causality,permutation_importance,shap_importance
+0,data/synthetic/synthetic_sinus.csv,0.9881924104298835,1.6405814427680263,1.1251476947303673e-16,0.028506478507888608,0.10097457445757611

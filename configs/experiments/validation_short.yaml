@@ -1,0 +1,50 @@
+# config.yaml
+experiment_name: "validation_short"
+paths:
+  storage_path: "data/gift_eval" 
+  output_path: "results"
+
+forecaster:
+  name: "MedianEnsemble"
+  max_length: 512
+  models:
+    # - name: "Moirai"
+    #   params:
+    #     repo_id: "Salesforce/moirai-1.1-R-large"
+    #     batch_size: 64
+    # - name: "Sundial"
+    #   params:
+    #     batch_size: 64
+    - name: "Toto"
+      params:
+        context_length: 512
+        batch_size: 64
+  alias: "ToTo-GiftEval-sample" # An identifier for your ensemble
+
+evaluation:
+  to_univariate: true
+  show_plot: false
+
+datasets:
+  - name: "bizitobs_l2c/H"
+    term: "short"
+  - name: "bitbrains_fast_storage/5T"
+    term: "short"
+  - name: "bitbrains_fast_storage/H"
+    term: "short"
+  - name: "bitbrains_rnd/H"
+    term: "short"
+  - name: "ett1/D"
+    term: "short"
+  - name: "ett1/W"
+    term: "short"
+  - name: "ett2/D"
+    term: "short"
+  - name: "ett2/W"
+    term: "short"
+  - name: "jena_weather/D"
+    term: "short"
+  - name: "kdd_cup_2018_with_missing/D"
+    term: "short"
+  - name: "solar/D"
+    term: "short"

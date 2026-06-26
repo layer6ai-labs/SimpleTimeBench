@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: uv-sync
+        name: Run uv sync after checkout
+        entry: bash -c 'echo "Running uv sync"; uv sync'
+        language: system
+        stages: [post-checkout, post-merge, post-commit]
+        always_run: true
+        
+  - repo: https://github.com/psf/black
+    rev: 24.4.0  # Use the latest stable version or your preferred version
+    hooks:
+      - id: black
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.0.0  # Use the latest stable version or your preferred version
+    hooks:
+      - id: flake8
