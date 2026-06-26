@@ -108,14 +108,6 @@ timeseries-research/
 │       ├── gifteval*.yaml           # GIFT-Eval configs
 │       ├── multi_vs_uni/            # Multivariate vs. univariate sweep (paper Table)
 │       └── real.yaml                # Delaware River / NVIDIA leak case studies
-├── data/
-│   ├── simpletime/                  # SimpleTimeBench generator & loader
-│   │   ├── timeseries_generator.py
-│   │   ├── simpletime.py            # CLI to regenerate the benchmark
-│   │   ├── gifteval_dataset.py
-│   │   └── README.md
-│   ├── gift_eval/                   # Downloaded from HF (gitignored)
-│   └── Hahn_survey/                 # Real-world datasets used in case studies
 ├── src/ts_toolkit/                  # Pipeline + model wrappers
 │   ├── dataloaders/                 # GIFT-Eval & generic loaders
 │   ├── models/
@@ -127,14 +119,6 @@ timeseries-research/
 │   ├── run_gifteval_config.py       # CLI batch runner (entry point)
 │   └── aggregate_validated_experiment_results.py
 ├── notebooks/                       # Analysis & paper-figure notebooks
-│   ├── 01_sota-uni-vs-multi/        # Multivariate vs. univariate analysis
-│   ├── 02_mean-bias-experiment/     # Mean-bias diagnostics
-│   ├── 03_mar-mbr/                  # MAR / MBR investigations
-│   ├── 04_merge-results/            # Result aggregation & paper tables
-│   ├── chronos_finetune_*.{ipynb,py}# Fine-tuning recipes
-│   └── polished_*.ipynb             # Paper-figure notebooks
-├── results_shared/                  # Versioned, shareable experiment outputs
-├── results/                         # Personal (gitignored) experiment outputs
 ├── paper_result_replication.md      # Step-by-step paper reproduction guide
 └── pyproject.toml
 ```
