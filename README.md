@@ -3,6 +3,9 @@
 # Foundations without Fundamentals
 ### Zero-Shot Blind Spots in Time Series Foundation Models
 
+## 🏆 Best Paper Award
+### FMSD @ ICML 2026
+
 [![Workshop](https://img.shields.io/badge/ICML%202026-FMSD%20Workshop-7B1FA2)](https://icml-structured-fm-workshop.github.io/)
 [![Python](https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](#license)
@@ -21,7 +24,7 @@
 
 ## Overview
 
-Time-series foundation models (TSFMs) post impressive **aggregate** scores on public leaderboards, yet quietly fail on tasks a junior analyst would solve with a ruler. This repository is the official implementation accompanying our paper **“Foundations without Fundamentals: Zero-Shot Blind Spots in Time Series FMs”** (ICML 2026 FMSD Workshop).
+Time-series foundation models (TSFMs) post impressive **aggregate** scores on public leaderboards, yet quietly fail on tasks a junior analyst would solve with a ruler. This repository is the official implementation accompanying our paper **“Foundations without Fundamentals: Zero-Shot Blind Spots in Time Series FMs,” winner of the Best Paper Award at FMSD @ ICML 2026**.
 
 We diagnose these failures with **SimpleTimeBench**, a controlled, GIFT-Eval-compatible benchmark of **28 generative processes × 3 evaluation modes** (univariate, multivariate, leading-covariate). Alongside the benchmark we ship:
 
@@ -196,8 +199,7 @@ Every experiment is described by a single YAML file in `configs/experiments/`. P
 ```bash
 # Smoke test: a 2-dataset SimpleTimeBench run with Chronos-2
 python scripts/run_gifteval_config.py \
-  --config configs/experiments/simpletime_sample.yaml \
-  --gpu 0
+  --config configs/experiments/simpletime_sample.yaml
 ```
 
 The runner streams through every dataset in the config, saves per-dataset artefacts under a timestamped folder, writes a combined CSV of successful runs, logs failures, and emits a JSON summary next to the log file. You can invoke it from anywhere inside the repository — paths are resolved relative to the repo root.
